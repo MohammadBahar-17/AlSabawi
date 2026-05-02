@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Al-Sabawi Supermarket - سوبر ماركت السبعاوي</title>
+    <title>سوبر ماركت السبعاوي - Al Sabawi Supermarket</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -14,20 +14,45 @@
         <div class="container">
             <div class="navbar-content">
                 <div class="logo">
-                    <img src="logo.png" alt="Al-Sabawi Supermarket Logo" class="logo-img">
+                    <img src="logo.png" alt="Al Sabawi Supermarket Logo" class="logo-img">
                     <div class="logo-text">
                         <span class="brand-name">سوبر ماركت السبعاوي</span>
-                        <span class="brand-tagline">Al-Sabawi</span>
+                        <span class="brand-tagline">Al Sabawi</span>
                     </div>
                 </div>
                 <div class="nav-search">
                     <input type="text" id="searchInput" placeholder="ابحث عن المنتجات..." class="search-box">
                     <button class="search-btn">🔍</button>
                 </div>
+                <button class="cart-btn" id="cartBtn">
+                    🛒
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
                 <button class="menu-toggle" id="menuToggle">☰</button>
             </div>
         </div>
     </nav>
+
+    <!-- Shopping Cart Panel -->
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h3>سلتك</h3>
+            <button class="cart-close"
+                onclick="document.getElementById('cartPanel').classList.remove('active')">✕</button>
+        </div>
+        <div class="cart-content">
+            <div class="cart-empty" id="cartEmpty">
+                <p>السلة فارغة 🛒</p>
+            </div>
+            <div id="cartItems"></div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total" id="cartTotal"></div>
+            <button class="whatsapp-order-btn" onclick="WhatsAppOrder.sendOrder()">
+                📱 أطلب عبر WhatsApp
+            </button>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section id="hero" class="hero">
@@ -70,7 +95,7 @@
                 </div>
                 <div class="about-image">
                     <div class="logo-showcase">
-                        <img src="logo.png" alt="Al-Sabawi Supermarket Logo" class="showcase-img">
+                        <img src="logo.png" alt="Al Sabawi Supermarket Logo" class="showcase-img">
                     </div>
                 </div>
             </div>
@@ -141,6 +166,8 @@
                             </div>
                             <span class="offer-save">توفير 25%</span>
                         </div>
+                        <button class="add-to-cart-btn" data-product-id="1" data-product-name="برتقال حلو"
+                            data-product-price="15">🛒 أضف للسلة</button>
                     </div>
                 </div>
                 <div class="offer-product-card">
@@ -156,6 +183,8 @@
                             </div>
                             <span class="offer-save">توفير 33%</span>
                         </div>
+                        <button class="add-to-cart-btn" data-product-id="8" data-product-name="بروكلي أخضر"
+                            data-product-price="12">🛒 أضف للسلة</button>
                     </div>
                 </div>
                 <div class="offer-product-card">
@@ -171,6 +200,8 @@
                             </div>
                             <span class="offer-save">توفير 25%</span>
                         </div>
+                        <button class="add-to-cart-btn" data-product-id="16" data-product-name="حليب كامل الدسم"
+                            data-product-price="9">🛒 أضف للسلة</button>
                     </div>
                 </div>
             </div>
@@ -194,7 +225,7 @@
                             <div class="contact-icon">📞</div>
                             <div class="contact-details">
                                 <h4>الهاتف</h4>
-                                <p><a href="tel:+972501234567" dir="ltr">+972 50 123 4567</a></p>
+                                <p><a href="tel:+972597571597" dir="ltr">+972 59 757 1597</a></p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -202,7 +233,7 @@
                             <div class="contact-details">
                                 <h4>WhatsApp</h4>
                                 <p>
-                                    <a href="https://wa.me/972501234567?text=مرحبا%20بك%20في%20الريفاف%20للخيرات"
+                                    <a href="https://wa.me/972597571597?text=مرحبا%20بك%20في%20سوبر%20ماركت%20السبعاوي"
                                         target="_blank" class="whatsapp-btn">
                                         اضغط هنا
                                     </a>
@@ -245,7 +276,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Al-Sabawi Supermarket. جميع الحقوق محفوظة.</p>
+            <p>&copy; 2026 Al Sabawi Supermarket. جميع الحقوق محفوظة.</p>
             <p>متجرك الموثوق للمنتجات الطازة والعضوية</p>
         </div>
     </footer>
